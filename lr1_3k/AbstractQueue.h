@@ -3,7 +3,7 @@
 #define _ABSTRACT_QUEUE_H_
 #include "Element.h"
 #include <iostream>
-class AbstractQueue
+class AbstractQueue  //интерфейс очереди
 {
 protected:
 	bool _is_empty;
@@ -18,8 +18,8 @@ public:
 	const static size_t CONTAINERS_COUNT = 3;
 	enum class ContainerType { DEQUE, STACK, FORWARD_LIST, NONE };
 	virtual ContainerType type() const = 0;
-	virtual void push(const Element& el) = 0;
-	virtual void pop() = 0;
-	virtual void print(std::ostream& os) const = 0;
+	virtual void push(const Element& el) = 0; //добавление конт
+	virtual void pop() = 0; //удаление конт
+	virtual void print(std::ostream& os) const = 0;  //вывод на экран
 };
 #endif

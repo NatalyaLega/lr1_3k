@@ -5,7 +5,7 @@
 #include "Deque.h"
 #include "Stack.h"
 #include "ForwardList.h"
-class ContainersFactory
+class ContainersFactory  //создание контейнеров
 {
 public:
 	ContainersFactory() = default;

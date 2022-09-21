@@ -6,7 +6,7 @@
 #include <stdexcept>
 #include <iostream>
 #include "IInput.h"
-class ForwardList : public AbstractQueue
+class ForwardList : public AbstractQueue  //реализация односвязного списка
 {
 private:
 	HalfLinkedElement* _head;
@@ -31,7 +31,7 @@ public:
 	void insert(size_t idx, const Element& el);
 	void erase(size_t idx);
 	virtual void print(std::ostream& os) const override;
-	class ConstForwardIterator
+	class ConstForwardIterator  //итератор(так же как для стека и дека, для доступа по инд)
 	{
 	private:
 		HalfLinkedElement* _ptr;

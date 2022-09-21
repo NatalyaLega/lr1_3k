@@ -2,7 +2,7 @@
 #ifndef _HALF_LINKED_ELEMENT_H_
 #define _HALF_LINKED_ELEMENT_H_
 #include "Element.h"
-class HalfLinkedElement : public Element
+class HalfLinkedElement : public Element //элемент с двумя указателями на соседние элементы
 {
 private:
 	HalfLinkedElement* _ptr;

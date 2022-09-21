@@ -2,7 +2,7 @@
 #ifndef _LINKED_ELEMENT_H_
 #define _LINKED_ELEMENT_H_
 #include "Element.h"
-class LinkedElement : public Element
+class LinkedElement : public Element //элемент с одним указателем на другой элемент
 {
 private:
 	LinkedElement* _left;

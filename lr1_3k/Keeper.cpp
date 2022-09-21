@@ -187,6 +187,7 @@ void Keeper::print_type(AbstractQueue::ContainerType type) const {
 		break;
 	}
 }
+//сохранение в файл__ 
 void Keeper::save_containers() const {
 	std::ofstream fout("containers.txt", std::ios_base::trunc | std::ios_base::out);
 	for (size_t index = 0; index < AbstractQueue::CONTAINERS_COUNT; ++index) {
@@ -199,9 +200,11 @@ void Keeper::save_containers() const {
 	std::cout << "\nEverything was saved successfuly\n";
 	fout.close();
 }
+//загрузка из файла
 void Keeper::load_containers() {
 	std::ifstream fin("containers.txt", std::ios_base::in);
 	clear();
+	//проверка на сущ-ние файла(открытие)
 	if (!fin.good()) {
 		std::cout << "\nCouldn't open file: make sure you made save at least once\n";
 		return;

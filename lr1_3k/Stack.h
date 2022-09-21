@@ -4,7 +4,7 @@
 #include "AbstractQueue.h"
 #include "HalfLinkedElem.h"
 #include <stdexcept>
-class Stack : public AbstractQueue
+class Stack : public AbstractQueue  //стек
 {
 private:
 	HalfLinkedElement* _top;
@@ -22,7 +22,7 @@ public:
 	virtual void pop() override;
 	virtual ContainerType type() const override;
 	virtual void print(std::ostream& os) const override;
-	class ConstForwardIterator
+	class ConstForwardIterator //итератор стека__ (как и в деке, для доступа по индексу)
 	{
 	private:
 		HalfLinkedElement* _ptr;

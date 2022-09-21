@@ -3,7 +3,7 @@
 #define _IINPUT_H_
 #include <iostream>
 template <typename ValueType>
-class IInput
+class IInput //управление потоком ввода
 {
 public:
 	enum class mode { clear, skip };

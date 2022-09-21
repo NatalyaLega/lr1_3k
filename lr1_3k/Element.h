@@ -1,7 +1,7 @@
 #pragma once
 #ifndef _ELEMENT_H_
 #define _ELEMENT_H_
-class Element
+class Element  //элемент контейнера
 {
 private:
 	int _value;

@@ -6,7 +6,7 @@
 #include "KeeperHandler.h"
 #include <iostream>
 #include <fstream>
-class Keeper
+class Keeper  //управление контейнерами
 {
 private:
 	ContainersFactory _factory;

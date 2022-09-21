@@ -5,7 +5,7 @@
 #include "AbstractQueue.h"
 #include "IInput.h"
 #include "Element.h"
-class AbstractKeeperHandler
+class AbstractKeeperHandler //интерфейс управления объетом Keeper
 {
 public:
 	AbstractKeeperHandler() = default;
@@ -19,7 +19,8 @@ public:
 	virtual ContainerAction get_container_action() const = 0;
 	virtual Element get_element() const = 0;
 };
-class IOKeeperHandler : public AbstractKeeperHandler
+
+class IOKeeperHandler : public AbstractKeeperHandler  //управление объектом Keeper через ввод/вывод
 {
 public:
 	IOKeeperHandler() = default;
@@ -36,11 +37,11 @@ private:
 	size_t _keeper_actions_count[KEEPER_ACTIONS_COUNT];
 	size_t _containers_actions_count[CONTAINER_ACTIONS_COUNT];
 public:
-	AutoTestKeeperHandler();
+	//AutoTestKeeperHandler();
 	~AutoTestKeeperHandler() = default;
-	virtual KeeperAction get_keeper_action() const override;
-	virtual AbstractQueue::ContainerType get_container_type() const override;
-	virtual ContainerAction get_container_action() const override;
-	virtual Element get_element() const override;
+	//virtual KeeperAction get_keeper_action() const override;
+	//virtual AbstractQueue::ContainerType get_container_type() const override;
+	//virtual ContainerAction get_container_action() const override;
+	//virtual Element get_element() const override;
 };
 #endif
