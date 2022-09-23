@@ -34,6 +34,11 @@ public:
 	void insert(size_t idx, const Element& el); //вставить элем
 	void erase(size_t idx); //стереть
 	virtual void print(std::ostream& os) const override;
+	virtual void sum(size_t idx) override;  //СУММА -> доп.функционал
+
+	//--------------------
+	//int sum(size_t idx); //вывод суммы ЕЁ СДЕЛАЛА ВИРТУАЛЬНОЙ...
+
 	class ConstForwardIterator //для перебора и чтобы ссылаться по индексу
 	{
 	private:

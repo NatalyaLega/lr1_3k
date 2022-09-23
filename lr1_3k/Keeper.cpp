@@ -102,9 +102,10 @@ void Keeper::remove_container() {
 		std::cout << "\nKeeper already hasn't container you tried to remove\n";
 	}
 }
+//работа с контейнером____добавить, удалить, вывести, суммма
 void Keeper::process_containers() {
 	auto action = _handler->get_container_action();
-	while (action != AbstractKeeperHandler::ContainerAction::QUIT) {
+	while (action != AbstractKeeperHandler::ContainerAction::SUM) {
 		switch (action) {
 		case AbstractKeeperHandler::ContainerAction::ENQUEUE:
 			process_enqueue();
@@ -114,6 +115,9 @@ void Keeper::process_containers() {
 			break;
 		case AbstractKeeperHandler::ContainerAction::OUTPUT:
 			print_containers();
+			break;
+		case AbstractKeeperHandler::ContainerAction::SUM:
+			sum_containers(); //сумма элементов контейнера
 			break;
 		default:
 			throw std::logic_error("Keeper::process_containers(): container action mismatch in switch");
@@ -187,6 +191,26 @@ void Keeper::print_type(AbstractQueue::ContainerType type) const {
 		break;
 	}
 }
+//СУММА
+void Keeper::sum_containers()
+{
+	
+	for (size_t i = 0; i < AbstractQueue::CONTAINERS_COUNT; ++i) {
+		if (_containers[i]) {
+			if (_containers[i]->empty()) {
+				std::cout << " - empty\n";
+			}
+			else {
+				_containers[i]->sum(i);
+			}
+		}
+		else {
+			std::cout << " - no container\n";
+		}
+	}
+	std::cout << "PRINT SUM_____";
+}
+
 //сохранение в файл__ 
 void Keeper::save_containers() const {
 	std::ofstream fout("containers.txt", std::ios_base::trunc | std::ios_base::out);

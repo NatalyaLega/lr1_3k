@@ -30,6 +30,7 @@ public:
 	const HalfLinkedElement& back() const;
 	void insert(size_t idx, const Element& el);
 	void erase(size_t idx);
+	virtual void sum(size_t idx) override;  //СУММА -> доп.функционал
 	virtual void print(std::ostream& os) const override;
 	class ConstForwardIterator  //итератор(так же как для стека и дека, для доступа по инд)
 	{

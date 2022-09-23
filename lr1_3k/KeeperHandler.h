@@ -13,7 +13,7 @@ public:
 	const static size_t KEEPER_ACTIONS_COUNT = 6;
 	enum class KeeperAction { ADD = 1, DELETE, SAVE, LOAD, PROCESS, QUIT };
 	const static size_t CONTAINER_ACTIONS_COUNT = 4;
-	enum class ContainerAction { ENQUEUE = 1, DEQUEUE, OUTPUT, QUIT };
+	enum class ContainerAction { ENQUEUE = 1, DEQUEUE, OUTPUT, QUIT, SUM }; //добавила сумму!!!!!
 	virtual KeeperAction get_keeper_action() const = 0;
 	virtual AbstractQueue::ContainerType get_container_type() const = 0;
 	virtual ContainerAction get_container_action() const = 0;

@@ -259,3 +259,17 @@ void Deque::print(std::ostream& os) const {
 	}
 	os << std::endl;
 }
+//////////////////////////////////////////////////////сумма
+void Deque::sum(size_t idx)
+{
+	LinkedElement* element = _head;
+	int sum = 0;
+	_head = _head->right_ptr();
+	for (int i = 0; i < idx; i++) {
+		sum = sum  + int(element->right_ptr());
+	}
+	std::cout << "sum value";
+	std::cout << sum;
+
+}
+

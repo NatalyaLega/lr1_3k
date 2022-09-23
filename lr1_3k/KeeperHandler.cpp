@@ -60,17 +60,18 @@ AbstractKeeperHandler::ContainerAction IOKeeperHandler::get_container_action() c
 	using std::cout;
 	cout << "\n\tWORK WITH CONTAINERS\n";
 	int choice = 0;
-	while (choice != int(ContainerAction::QUIT)) {
+	while (choice != int(ContainerAction::SUM)) {
 		cout << "\nNote that we'll work with all containers at one time:\n";
 		cout << "\nContainers manipulations:\n";
 		cout << "1 - add element\n";
 		cout << "2 - delete element\n";
 		cout << "3 - output\n";
-		cout << "4 - cancel\n";
+		cout << "4 - sum elements\n";
+		cout << "5 - cancel\n"; ///вывод суммы--> доп.функционал
 		IInput<int> input;
 		choice = input.getValueFromInput();
 		if (choice < int(ContainerAction::ENQUEUE)
-			|| choice > int(ContainerAction::QUIT)) {
+			|| choice > int(ContainerAction::SUM)) {
 			system("cls");
 			cout << "\nWrong choice, try again\n";
 			continue;
@@ -80,10 +81,11 @@ AbstractKeeperHandler::ContainerAction IOKeeperHandler::get_container_action() c
 		case 1: return ContainerAction::ENQUEUE;
 		case 2: return ContainerAction::DEQUEUE;
 		case 3: return ContainerAction::OUTPUT;
+		case 4: return ContainerAction::SUM; //если не сработает, то убрать эту строку
 		default: break;
 		}
 	}
-	return ContainerAction::QUIT;
+	return ContainerAction::SUM;
 }
 Element IOKeeperHandler::get_element() const {
 	using std::cout;

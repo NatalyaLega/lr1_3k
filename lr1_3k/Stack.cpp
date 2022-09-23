@@ -80,3 +80,15 @@ void Stack::print(std::ostream& os) const {
 		os << (*iter).value() << " ";
 	os << std::endl;
 }
+
+void Stack::sum(size_t idx)
+{
+	HalfLinkedElement* element = _top;
+	int sum = 0;
+	_top = _top->ptr();
+	for (int i = 0; i < idx; i++) {
+		sum = sum + int(element->ptr());
+	}
+	std::cout << "sum value";
+	std::cout << sum;
+}

@@ -224,6 +224,17 @@ void ForwardList::erase(size_t idx) {
 		_is_empty = true;
 	}
 }
+void ForwardList::sum(size_t idx) //ясллю
+{
+	HalfLinkedElement* element = _head;
+	int sum = 0;
+	_head = _head->ptr();
+	for (int i = 0; i < idx; i++) {
+		sum = sum + int(element->ptr());
+	}
+	std::cout << "sum value";
+	std::cout << sum;
+}
 ForwardList::ConstForwardIterator ForwardList::cbegin() const {
 	return ConstForwardIterator(_head);
 }

@@ -24,6 +24,7 @@ private:
 	void process_dequeue();
 	void save_containers() const;
 	void load_containers();
+    void sum_containers(); //сумма элементов контейнера
 	void print_containers() const;
 	void process_containers();
 public:

@@ -22,6 +22,7 @@ public:
 	virtual void pop() override;
 	virtual ContainerType type() const override;
 	virtual void print(std::ostream& os) const override;
+	virtual void sum(size_t idx) override;  //СУММА -> доп.функционал
 	class ConstForwardIterator //итератор стека__ (как и в деке, для доступа по индексу)
 	{
 	private:
