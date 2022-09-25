@@ -23,7 +23,7 @@ public:
 	virtual void pop() override;
 	const LinkedElement& at(size_t idx) const;
 	LinkedElement& at(size_t idx);
-	LinkedElement& operator[](size_t idx) noexcept;
+	LinkedElement& operator[](size_t idx) noexcept; //не созд.искл
 	const LinkedElement& front() const;
 	const LinkedElement& back() const;
 	void push_back(const Element& el);

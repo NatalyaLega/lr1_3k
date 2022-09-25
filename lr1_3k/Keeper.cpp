@@ -105,7 +105,7 @@ void Keeper::remove_container() {
 //работа с контейнером____добавить, удалить, вывести, суммма
 void Keeper::process_containers() {
 	auto action = _handler->get_container_action();
-	while (action != AbstractKeeperHandler::ContainerAction::SUM) {
+	while (action != AbstractKeeperHandler::ContainerAction::QUIT) {
 		switch (action) {
 		case AbstractKeeperHandler::ContainerAction::ENQUEUE:
 			process_enqueue();
@@ -194,21 +194,17 @@ void Keeper::print_type(AbstractQueue::ContainerType type) const {
 //СУММА
 void Keeper::sum_containers()
 {
-	
+	std::cout << "___SUM___\n";
 	for (size_t i = 0; i < AbstractQueue::CONTAINERS_COUNT; ++i) {
 		if (_containers[i]) {
 			if (_containers[i]->empty()) {
 				std::cout << " - empty\n";
 			}
 			else {
-				_containers[i]->sum(i);
+				_containers[i]->sum(5);
 			}
 		}
-		else {
-			std::cout << " - no container\n";
-		}
 	}
-	std::cout << "PRINT SUM_____";
 }
 
 //сохранение в файл__ 

@@ -89,6 +89,6 @@ void Stack::sum(size_t idx)
 	for (int i = 0; i < idx; i++) {
 		sum = sum + int(element->ptr());
 	}
-	std::cout << "sum value";
+	std::cout << "sum value:\n";
 	std::cout << sum;
 }

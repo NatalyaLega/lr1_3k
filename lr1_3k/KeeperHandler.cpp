@@ -71,7 +71,7 @@ AbstractKeeperHandler::ContainerAction IOKeeperHandler::get_container_action() c
 		IInput<int> input;
 		choice = input.getValueFromInput();
 		if (choice < int(ContainerAction::ENQUEUE)
-			|| choice > int(ContainerAction::SUM)) {
+			|| choice > int(ContainerAction::QUIT)) {
 			system("cls");
 			cout << "\nWrong choice, try again\n";
 			continue;
@@ -85,7 +85,7 @@ AbstractKeeperHandler::ContainerAction IOKeeperHandler::get_container_action() c
 		default: break;
 		}
 	}
-	return ContainerAction::SUM;
+	return ContainerAction::QUIT;
 }
 Element IOKeeperHandler::get_element() const {
 	using std::cout;

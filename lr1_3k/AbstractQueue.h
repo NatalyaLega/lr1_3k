@@ -21,6 +21,6 @@ public:
 	virtual void push(const Element& el) = 0; //добавление конт
 	virtual void pop() = 0; //удаление конт
 	virtual void print(std::ostream& os) const = 0;  //вывод на экран
-	virtual void sum(size_t idx) = 0; //поиск суммы ---> доп
+	virtual void sum(size_t idx) = 0; //поиск —”ћћџ ---> доп
 };
 #endif

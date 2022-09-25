@@ -38,7 +38,7 @@ public:
 		HalfLinkedElement* _ptr;
 	public:
 		ConstForwardIterator() : _ptr(nullptr) {}
-		explicit ConstForwardIterator(HalfLinkedElement* ptr) : _ptr(ptr) {}
+		explicit ConstForwardIterator(HalfLinkedElement* ptr) : _ptr(ptr) {}  //констр.с 1 парам(предотвр. неявное пре-ние типов при иниц.
 		ConstForwardIterator(const ConstForwardIterator& iter) : _ptr(iter._ptr) {}
 		~ConstForwardIterator() = default;
 		ConstForwardIterator operator++() { _ptr = _ptr->ptr(); return ConstForwardIterator(_ptr); }
