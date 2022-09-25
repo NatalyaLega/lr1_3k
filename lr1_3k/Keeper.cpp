@@ -194,14 +194,14 @@ void Keeper::print_type(AbstractQueue::ContainerType type) const {
 //СУММА
 void Keeper::sum_containers()
 {
-	std::cout << "___SUM___\n";
+	std::cout << "___SUM__from__keeper_\n";
 	for (size_t i = 0; i < AbstractQueue::CONTAINERS_COUNT; ++i) {
 		if (_containers[i]) {
 			if (_containers[i]->empty()) {
 				std::cout << " - empty\n";
 			}
 			else {
-				_containers[i]->sum(5);
+				_containers[i]->sum(3); //надо передать размерность
 			}
 		}
 	}

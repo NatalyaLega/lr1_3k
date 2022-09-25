@@ -232,7 +232,7 @@ void ForwardList::sum(size_t idx) //ясллю
 	for (int i = 0; i < idx; i++) {
 		sum = sum + int(element->ptr());
 	}
-	std::cout << "sum value:\n";
+	std::cout << "sum value(from list):\n";
 	std::cout << sum;
 }
 ForwardList::ConstForwardIterator ForwardList::cbegin() const {

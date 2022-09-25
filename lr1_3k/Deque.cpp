@@ -264,11 +264,11 @@ void Deque::sum(size_t idx)
 {
 	LinkedElement* element = _head;
 	int sum = 0;
-	_head = _head->right_ptr();
+	//_head = _head->right_ptr();
 	for (int i = 0; i < idx; i++) {
-		sum = sum  + int(element->right_ptr());
+		sum = sum  + int(element++);
 	}
-	std::cout << "sum value:\n";
+	std::cout << "sum value(from deque):\n";
 	std::cout << sum;
 
 }
