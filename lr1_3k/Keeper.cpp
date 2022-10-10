@@ -201,7 +201,8 @@ void Keeper::sum_containers()
 				std::cout << " - empty\n";
 			}
 			else {
-				_containers[i]->sum(3); //надо передать размерность
+				auto size = _containers[i]->size();
+				_containers[i]->sum(size); //надо передать размерность
 			}
 		}
 	}

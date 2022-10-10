@@ -14,6 +14,7 @@ public:
 	~LinkedElement() = default;
 	LinkedElement* left_ptr() const { return _left; }
 	LinkedElement* right_ptr() const { return _right; }
+	LinkedElement* operator++();
 	void set_left_ptr(LinkedElement* ptr) { _left = ptr; }
 	void set_right_ptr(LinkedElement* ptr) { _right = ptr; }
 };
