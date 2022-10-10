@@ -84,10 +84,13 @@ void Stack::print(std::ostream& os) const {
 void Stack::sum(size_t idx)
 {
 	HalfLinkedElement* element = _top;
+	ConstForwardIterator iter = cbegin();
 	int sum = 0;
 	_top = _top->ptr();
 	for (int i = 0; i < idx; i++) {
 		sum = sum + int(element->ptr());
+		sum = sum + iter.ptr()->value();
+		iter = iter.operator++();
 	}
 	std::cout << "sum value(from stack):\n";
 	std::cout << sum;

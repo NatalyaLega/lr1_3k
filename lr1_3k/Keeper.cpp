@@ -1,4 +1,4 @@
-#include "Keeper.h"
+п»ї#include "Keeper.h"
 Keeper::Keeper(AbstractKeeperHandler* handler) : _handler(handler) {
 	std::cout << "\n# Keeper::Keeper() constructor called\n";
 	for (size_t i = 0; i < AbstractQueue::CONTAINERS_COUNT; ++i) {
@@ -102,7 +102,7 @@ void Keeper::remove_container() {
 		std::cout << "\nKeeper already hasn't container you tried to remove\n";
 	}
 }
-//работа с контейнером____добавить, удалить, вывести, суммма
+//СЂР°Р±РѕС‚Р° СЃ РєРѕРЅС‚РµР№РЅРµСЂРѕРј____РґРѕР±Р°РІРёС‚СЊ, СѓРґР°Р»РёС‚СЊ, РІС‹РІРµСЃС‚Рё, СЃСѓРјРјРјР°
 void Keeper::process_containers() {
 	auto action = _handler->get_container_action();
 	while (action != AbstractKeeperHandler::ContainerAction::QUIT) {
@@ -117,7 +117,7 @@ void Keeper::process_containers() {
 			print_containers();
 			break;
 		case AbstractKeeperHandler::ContainerAction::SUM:
-			sum_containers(); //сумма элементов контейнера
+			sum_containers(); //СЃСѓРјРјР° СЌР»РµРјРµРЅС‚РѕРІ РєРѕРЅС‚РµР№РЅРµСЂР°
 			break;
 		default:
 			throw std::logic_error("Keeper::process_containers(): container action mismatch in switch");
@@ -191,7 +191,7 @@ void Keeper::print_type(AbstractQueue::ContainerType type) const {
 		break;
 	}
 }
-//СУММА
+//РЎРЈРњРњРђ
 void Keeper::sum_containers()
 {
 	std::cout << "___SUM__from__keeper_\n";
@@ -201,13 +201,15 @@ void Keeper::sum_containers()
 				std::cout << " - empty\n";
 			}
 			else {
-				_containers[i]->sum(3); //надо передать размерность
+				_containers[i]->sum(3); //пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+				auto size = _containers[i]->size();
+				_containers[i]->sum(size); //пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 			}
 		}
 	}
 }
 
-//сохранение в файл__ 
+//СЃРѕС…СЂР°РЅРµРЅРёРµ РІ С„Р°Р№Р»__ 
 void Keeper::save_containers() const {
 	std::ofstream fout("containers.txt", std::ios_base::trunc | std::ios_base::out);
 	for (size_t index = 0; index < AbstractQueue::CONTAINERS_COUNT; ++index) {
@@ -220,11 +222,11 @@ void Keeper::save_containers() const {
 	std::cout << "\nEverything was saved successfuly\n";
 	fout.close();
 }
-//загрузка из файла
+//Р·Р°РіСЂСѓР·РєР° РёР· С„Р°Р№Р»Р°
 void Keeper::load_containers() {
 	std::ifstream fin("containers.txt", std::ios_base::in);
 	clear();
-	//проверка на сущ-ние файла(открытие)
+	//РїСЂРѕРІРµСЂРєР° РЅР° СЃСѓС‰-РЅРёРµ С„Р°Р№Р»Р°(РѕС‚РєСЂС‹С‚РёРµ)
 	if (!fin.good()) {
 		std::cout << "\nCouldn't open file: make sure you made save at least once\n";
 		return;
