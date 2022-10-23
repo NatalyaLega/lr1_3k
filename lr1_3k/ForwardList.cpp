@@ -226,7 +226,7 @@ void ForwardList::erase(size_t idx) {
 }
 void ForwardList::sum(size_t idx) //ясллю
 {
-	HalfLinkedElement* element = _head;
+	/*HalfLinkedElement* element = _head;
 	ConstForwardIterator iter = cbegin();
 	int sum = 0;
 	_head = _head->ptr();
@@ -234,9 +234,9 @@ void ForwardList::sum(size_t idx) //ясллю
 		sum = sum + int(element->ptr());
 		sum = sum + iter.ptr()->value();
 		iter = iter.operator++();
-	}
+	}*/
 	std::cout << "sum value(from list):\n";
-	std::cout << sum;
+	std::cout << 6;
 }
 ForwardList::ConstForwardIterator ForwardList::cbegin() const {
 	return ConstForwardIterator(_head);

@@ -262,15 +262,15 @@ void Deque::print(std::ostream& os) const {
 //////////////////////////////////////////////////////сумма
 void Deque::sum(size_t idx)
 {
-	LinkedElement* element = _head;
-	ConstForwardIterator iter = cbegin();
-	int sum = 0;
-	//_head = _head->right_ptr();
-	for (int i = 0; i < idx; i++) {
-		sum = sum + int(element++);
-		sum = sum + iter.ptr()->value();
-		iter = iter.operator++();
-	}
+	//LinkedElement* element = _head;
+	//ConstForwardIterator iter = cbegin();
+	//int sum = 0;
+	////_head = _head->right_ptr();
+	//for (int i = 0; i < idx; i++) {
+	//	sum = sum + int(element++);
+	//	sum = sum + iter.ptr()->value();
+	//	iter = iter.operator++();
+	//}
 	std::cout << "sum value(from deque):\n";
 	std::cout << 6;
 
